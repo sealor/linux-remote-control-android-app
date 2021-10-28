@@ -17,7 +17,6 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
-
     buildTypes {
         release {
             minifyEnabled false
@@ -30,6 +29,10 @@ android {
     }
     kotlinOptions {
         jvmTarget = '1.8'
+    }
+    aaptOptions {
+        // see: https://stackoverflow.com/questions/28934333/how-can-i-use-android-aaptoptions/56134640#56134640
+        ignoreAssetsPattern '!.*:!*.out:!*.c:!*_test.py'
     }
 }
 
